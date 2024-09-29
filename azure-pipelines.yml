@@ -1,6 +1,8 @@
 trigger:
 - master
 
+pool: divyanshuagent
+
 resources:
 - repo: self
 
@@ -14,7 +16,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: divyanshuagent  # Ensure this matches your agent pool
+      name: divyanshuagent
     steps:
     - task: Docker@2
       displayName: Build an image
@@ -30,7 +32,7 @@ stages:
   - job: Deploy
     displayName: Deploy
     pool:
-      name: divyanshuagent  # Ensure this matches your agent pool
+      name: divyanshuagent
     steps:
     - task: AzureWebApp@1
       displayName: Deploy to Azure App Service

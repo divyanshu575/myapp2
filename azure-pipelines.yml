@@ -34,10 +34,10 @@ stages:
     pool:
       name: divyanshuagent
     steps:
-    - task: AzureWebApp@1
-      displayName: Deploy to Azure App Service
+    - task: AzureWebAppContainer@1
+      displayName: Deploy to Azure App Service using Container
       inputs:
         azureSubscription: 'divyanshuconnection'
-        appType: 'webAppContainer'
         appName: 'divyanshu-app'
         imageName: 'divyanshureg.azurecr.io/nginx:$(tag)'
+        containerCommand: ''
